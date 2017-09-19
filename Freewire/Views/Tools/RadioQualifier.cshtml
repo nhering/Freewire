@@ -9,7 +9,7 @@
 @using (Html.BeginForm("RadioQualifier", "Tools"))
 {
     @Html.AntiForgeryToken()
-    <div class="jumbotron" style="padding-top: 15px;">
+    <div class="jumbotron">
 
         <h2>Radio Qualifier</h2>
         <hr />
@@ -19,7 +19,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-6" style="text-align: right;">Distance:</label>
                     <div class="col-md-6">
-                        <input class="form-control text-box single-line" type="number" name="distance" required/>
+                        <input class="form-control text-box single-line" type="number" name="distance" value="@ViewBag.distance" required/>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-6" style="text-align: right;">Bandwidth:</label>
                     <div class="col-md-6">
-                        <input class="form-control text-box single-line" type="number" name="bandwidth" required />
+                        <input class="form-control text-box single-line" type="number" name="bandwidth" value="@ViewBag.bandwidth" required />
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
 
             <div class="row">
                 <div class="form-group">
-                    <button class="btn-group-justified" type="submit">Submit</button>
+                    <button type="submit" style="display:none;"></button>
                 </div>
             </div>
 
@@ -74,9 +74,7 @@
                 </th>
                 <th></th>
             </tr>
-            @if (Model.Count() > 0)
-            {
-                foreach (var item in Model)
+            @foreach (var item in Model)
                 {
                     <tr>
                         <td>
@@ -99,7 +97,6 @@
                         </td>
                     </tr>
                 }
-            }
 
         </table>
 </div>

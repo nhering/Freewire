@@ -14,6 +14,9 @@ namespace Freewire.Controllers
         // GET: Tools
         public ActionResult RadioQualifier()
         {
+            //ViewBag.distance = 0;
+            //ViewBag.bandwidth = 0;
+
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
                                                 where e.Bandwidth == 0
                                                 select e;
@@ -26,6 +29,9 @@ namespace Freewire.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RadioQualifier(int distance, int bandwidth)
         {
+            ViewBag.distance = distance;
+            ViewBag.bandwidth = bandwidth;
+
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
                                                 where e.Distance >= distance
                                                 where e.Bandwidth >= bandwidth
