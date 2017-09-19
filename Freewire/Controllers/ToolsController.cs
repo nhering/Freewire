@@ -14,6 +14,14 @@ namespace Freewire.Controllers
         // GET: Tools
         public ActionResult RadioQualifier()
         {
+            return View();
+        }
+
+        // GET: Tools
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RadioQualifier(int distance, int bandwidth)
+        {
             return View(db.EquipmentModels.ToList());
         }
 

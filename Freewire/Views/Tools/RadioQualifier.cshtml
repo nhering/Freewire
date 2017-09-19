@@ -4,53 +4,100 @@
     ViewBag.Title = "Radio Qualifier";
 }
 
-<h2>Radio Qualifier</h2>
+<div class="container">
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Make)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Model)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Distance)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bandwidth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.License)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cost)
-        </th>
-        <th></th>
-    </tr>
+@using (Html.BeginForm("RadioQualifier", "Tools"))
+{
+    <div class="jumbotron" style="padding-top: 15px;">
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Make)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bandwidth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.License)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cost)
-            </td>
-        </tr>
-    }
+        <h2>Radio Qualifier</h2>
+        <hr />
+        <div class="col-sm-12 col-md-4">
 
-</table>
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-6">Distance</label>
+                    <div class="col-md-6">
+                        <input class="form-control text-box single-line" type="number" name="distance" required/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-6">Bandwidth</label>
+                    <div class="col-md-6">
+                        <input class="form-control text-box single-line" type="number" name="bandwidth" required />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 col-md-4">
+
+            <div class="row">
+                <div class="form-group">
+                    <button class="btn-group-justified" type="submit">Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Make)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Model)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Distance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bandwidth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.License)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cost)
+                </th>
+                <th></th>
+            </tr>
+            @*
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Make)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Model)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Distance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Bandwidth)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.License)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Cost)
+                        </td>
+                    </tr>
+                }
+            *@
+
+        </table>
+</div>
