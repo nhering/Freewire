@@ -22,3 +22,18 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*************Footer**************/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #eee;
+    font-size: 11px;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 0;
+    z-index: 1000;
+}
