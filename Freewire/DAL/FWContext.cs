@@ -9,7 +9,7 @@ namespace Freewire.DAL
 {
     public class FWContext : ApplicationDbContext
     {
-        public ApplicationDbContext db = new ApplicationDbContext();
+        //public ApplicationDbContext db = new ApplicationDbContext();
 
         public DbSet<EquipmentModel> Equipment { get; set; }
     }

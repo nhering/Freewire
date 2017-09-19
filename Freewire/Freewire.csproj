@@ -168,12 +168,27 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ToolsController.cs" />
     <Compile Include="DAL\FWContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709181653589_initial.cs" />
+    <Compile Include="Migrations\201709181653589_initial.Designer.cs">
+      <DependentUpon>201709181653589_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709181703389_equipmentModel.cs" />
+    <Compile Include="Migrations\201709181703389_equipmentModel.Designer.cs">
+      <DependentUpon>201709181703389_equipmentModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709190157406_addEquipmentModelAttemptTwo.cs" />
+    <Compile Include="Migrations\201709190157406_addEquipmentModelAttemptTwo.Designer.cs">
+      <DependentUpon>201709190157406_addEquipmentModelAttemptTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EquipmentModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -236,6 +251,12 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Equipment\Create.cshtml" />
+    <Content Include="Views\Equipment\Delete.cshtml" />
+    <Content Include="Views\Equipment\Details.cshtml" />
+    <Content Include="Views\Equipment\Edit.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Tools\RadioQualifier.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -247,6 +268,17 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709181653589_initial.resx">
+      <DependentUpon>201709181653589_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709181703389_equipmentModel.resx">
+      <DependentUpon>201709181703389_equipmentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709190157406_addEquipmentModelAttemptTwo.resx">
+      <DependentUpon>201709190157406_addEquipmentModelAttemptTwo.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

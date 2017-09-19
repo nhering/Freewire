@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Freewire.DAL;
 
 namespace Freewire.Models
 {
@@ -29,5 +30,7 @@ namespace Freewire.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Freewire.Models.EquipmentModel> EquipmentModels { get; set; }
     }
 }
