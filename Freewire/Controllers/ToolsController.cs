@@ -14,7 +14,11 @@ namespace Freewire.Controllers
         // GET: Tools
         public ActionResult RadioQualifier()
         {
-            return View();
+            IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
+                                                where e.Bandwidth == 0
+                                                select e;
+
+            return View(equip);
         }
 
         // GET: Tools
@@ -22,7 +26,12 @@ namespace Freewire.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RadioQualifier(int distance, int bandwidth)
         {
-            return View(db.EquipmentModels.ToList());
+            IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
+                                                where e.Distance >= distance
+                                                where e.Bandwidth >= bandwidth
+                                                select e;
+
+            return View(equip);
         }
 
         // GET: Tools/Details/5
