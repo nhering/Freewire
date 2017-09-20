@@ -13,33 +13,33 @@
         <h2>Radio Qualifier</h2>
         <hr />
         <div class="row">
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-4 col-md-4">
                 <div class="row">
                     <div class="form-group">
-                        <label class="control-label col-md-6" style="text-align: right;">Distance:</label>
+                        <label class="control-label col-md-6" style="text-align: right;">Enter distance in miles:</label>
                         <div class="col-md-6">
-                            <input class="form-control text-box single-line" type="number" name="distance" value="@ViewBag.distance" required/>
+                            <input class="form-control text-box single-line" type="number" name="distance" value="@ViewBag.distance" required />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-4 col-md-4">
                 <div class="row">
                     <div class="form-group">
-                        <label class="control-label col-md-6" style="text-align: right;">Bandwidth:</label>
+                        <label class="control-label col-md-6" style="text-align: right;">Enter bandwidth in Mbps:</label>
                         <div class="col-md-6">
                             <input class="form-control text-box single-line" type="number" name="bandwidth" value="@ViewBag.bandwidth" required />
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-sm-6 col-md-4">
-            <div class="row">
-                <div class="form-group">
-                    <button type="submit" style="display:none;"></button>
+            <div class="col-sm-4 col-md-4">
+                <div class="row">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block">Calculate</button>
+                    </div>
                 </div>
             </div>
         </div>

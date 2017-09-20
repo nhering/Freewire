@@ -11,12 +11,10 @@ namespace Freewire.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        //Called when loading the page from the tools menu
         // GET: Tools
         public ActionResult RadioQualifier()
         {
-            //ViewBag.distance = 0;
-            //ViewBag.bandwidth = 0;
-
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
                                                 where e.Bandwidth == 0
                                                 select e;
@@ -24,11 +22,13 @@ namespace Freewire.Controllers
             return View(equip);
         }
 
+        //Called when submitting form data
         // GET: Tools
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult RadioQualifier(int distance, int bandwidth)
         {
+            //Keeps previously entered data in the form fields.
             ViewBag.distance = distance;
             ViewBag.bandwidth = bandwidth;
 
