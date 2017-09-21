@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201709190157406_addEquipmentModelAttemptTwo.Designer.cs">
       <DependentUpon>201709190157406_addEquipmentModelAttemptTwo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709211658035_editEquipmentModel.cs" />
+    <Compile Include="Migrations\201709211658035_editEquipmentModel.Designer.cs">
+      <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EquipmentModel.cs" />
@@ -278,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709190157406_addEquipmentModelAttemptTwo.resx">
       <DependentUpon>201709190157406_addEquipmentModelAttemptTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709211658035_editEquipmentModel.resx">
+      <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

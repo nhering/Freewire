@@ -43,12 +43,12 @@
                 </div>
             </div>
         </div>
-}
 
         <table class="table table-striped">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Make)
+                    @*@Html.ActionLink("Make", "RadioQualifier", new { sort = ViewBag.sortMake })*@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Model)
@@ -68,7 +68,7 @@
                 <th></th>
             </tr>
             @foreach (var item in Model)
-                {
+            {
                     <tr>
                         <td>
                             @Html.DisplayFor(modelItem => item.Make)
@@ -89,7 +89,8 @@
                             @Html.DisplayFor(modelItem => item.Cost)
                         </td>
                     </tr>
-                }
+            }
 
         </table>
+}
 </div>

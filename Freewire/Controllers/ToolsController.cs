@@ -11,31 +11,54 @@ namespace Freewire.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        //Called when loading the page from the tools menu
+        // Called when loading the page from the tools menu
         // GET: Tools
-        public ActionResult RadioQualifier()
+        public ActionResult radioqualifier()
         {
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
-                                                where e.Bandwidth == 0
+                                                where e.Bandwidth < 0
                                                 select e;
 
             return View(equip);
         }
 
-        //Called when submitting form data
+        // Called when submitting form data
         // GET: Tools
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RadioQualifier(int distance, int bandwidth)
+        public ActionResult RadioQualifier(int distance, int bandwidth, string sort)
         {
             //Keeps previously entered data in the form fields.
             ViewBag.distance = distance;
             ViewBag.bandwidth = bandwidth;
 
+            //Handles sort order parameter switching
+            ViewBag.sortMake = String.IsNullOrEmpty(sort) ? "make_desc" : "";
+            ViewBag.sortDistance = sort == "distance" ? "distance_desc" : "distance";
+
+            //Performs search
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
                                                 where e.Distance >= distance
                                                 where e.Bandwidth >= bandwidth
                                                 select e;
+
+            //Implements sort order parameter
+            switch (sort)
+            {
+                case "make_desc": //Oposite of the default value
+                    equip = equip.OrderByDescending(e => e.Make);
+                    break;
+                case "distance":
+                    equip = equip.OrderBy(e => e.Distance);
+                    break;
+                case "distance_desc":
+                    equip = equip.OrderByDescending(e => e.Distance);
+                    break;
+                default:
+                    equip = equip.OrderBy(e => e.Cost);
+                    break;
+            }
+
 
             return View(equip);
         }
