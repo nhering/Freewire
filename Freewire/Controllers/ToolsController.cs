@@ -25,7 +25,6 @@ namespace Freewire.Controllers
         // Called when submitting form data
         // GET: Tools
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult RadioQualifier(int distance, int bandwidth, string sort, string lastSort, string lastSortOrder)
         {
             //Keeps previously entered data in the form fields.
