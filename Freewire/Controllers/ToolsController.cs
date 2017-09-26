@@ -11,9 +11,9 @@ namespace Freewire.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // Called when loading the page from the tools menu
+        // Called when loading the page
         // GET: Tools
-        public ActionResult radioqualifier()
+        public ActionResult RadioQualifier()
         {
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
                                                 where e.Bandwidth < 0
@@ -26,15 +26,11 @@ namespace Freewire.Controllers
         // GET: Tools
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RadioQualifier(int distance, int bandwidth, string sort)
+        public ActionResult RadioQualifier(int distance, int bandwidth, string lastSort, string sort = "")
         {
             //Keeps previously entered data in the form fields.
             ViewBag.distance = distance;
             ViewBag.bandwidth = bandwidth;
-
-            //Handles sort order parameter switching
-            ViewBag.sortMake = String.IsNullOrEmpty(sort) ? "make_desc" : "";
-            ViewBag.sortDistance = sort == "distance" ? "distance_desc" : "distance";
 
             //Performs search
             IEnumerable<EquipmentModel> equip = from e in db.EquipmentModels
@@ -45,7 +41,19 @@ namespace Freewire.Controllers
             //Implements sort order parameter
             switch (sort)
             {
-                case "make_desc": //Oposite of the default value
+                case "make":
+                    if (lastSort == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.Make);
+                        ViewBag.lastSort = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.Make);
+                        ViewBag.lastSort = "Desc";
+                    }
+                    break;                        
+                case "make_desc":
                     equip = equip.OrderByDescending(e => e.Make);
                     break;
                 case "distance":

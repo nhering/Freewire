@@ -8,6 +8,8 @@
 
 @using (Html.BeginForm("RadioQualifier", "Tools"))
 {
+    <input name="lastSort" value="@ViewBag.lastSort" type="hidden" />
+
     @Html.AntiForgeryToken()
 
         <h2>Radio Qualifier</h2>
@@ -46,8 +48,8 @@
 
         <table class="table table-striped">
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Make)
+                <th class="form-group">
+                    <button type="submit" name="sort" value="make">@Html.DisplayNameFor(model => model.Make)</button>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Model)
