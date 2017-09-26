@@ -8,7 +8,8 @@
 
 @using (Html.BeginForm("RadioQualifier", "Tools"))
 {
-    <input name="lastSort" value="@ViewBag.lastSort" type="hidden" />
+    <input name="lastSort" value="@ViewBag.lastSort" hidden />
+    <input name="lastSortOrder" value="@ViewBag.lastSortOrder" hidden />
 
     @Html.AntiForgeryToken()
 
@@ -29,7 +30,7 @@
             <div class="col-sm-4 col-md-4">
                 <div class="row">
                     <div class="form-group">
-                        <label class="control-label col-md-6" style="text-align: right;" onclick="sortTable(1)">Enter bandwidth in Mbps:</label>
+                        <label class="control-label col-md-6" style="text-align: right;">Enter bandwidth in Mbps:</label>
                         <div class="col-md-6">
                             <input class="form-control text-box single-line" type="number" name="bandwidth" value="@ViewBag.bandwidth" required />
                         </div>
@@ -49,22 +50,106 @@
         <table class="table table-striped">
             <tr>
                 <th class="form-group">
-                    <button type="submit" name="sort" value="make">@Html.DisplayNameFor(model => model.Make)</button>
+                    @if (ViewBag.lastSort == "make")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="make">@Html.DisplayNameFor(model => model.Make) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="make">@Html.DisplayNameFor(model => model.Make) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="make">@Html.DisplayNameFor(model => model.Make)</button>
+                    }
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Model)
+                <th class="form-group">
+                    @if (ViewBag.lastSort == "model")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="model">@Html.DisplayNameFor(model => model.Model) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="model">@Html.DisplayNameFor(model => model.Model) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="model">@Html.DisplayNameFor(model => model.Model)</button>
+                    }
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Distance)
+                <th class="form-group">
+                    @if (ViewBag.lastSort == "distance")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="distance">@Html.DisplayNameFor(model => model.Distance) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="distance">@Html.DisplayNameFor(model => model.Distance) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="distance">@Html.DisplayNameFor(model => model.Distance)</button>
+                    }
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Bandwidth)
+                <th class="form-group">
+                    @if (ViewBag.lastSort == "bandwidth")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="bandwidth">@Html.DisplayNameFor(model => model.Bandwidth) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="bandwidth">@Html.DisplayNameFor(model => model.Bandwidth) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="bandwidth">@Html.DisplayNameFor(model => model.Bandwidth)</button>
+                    }
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.License)
+                <th class="form-group">
+                    @if (ViewBag.lastSort == "license")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="license">@Html.DisplayNameFor(model => model.License) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="license">@Html.DisplayNameFor(model => model.License) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="license">@Html.DisplayNameFor(model => model.License)</button>
+                    }
                 </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Cost)
+                <th class="form-group">
+                    @if (ViewBag.lastSort == "cost")
+                    {
+                        if (ViewBag.lastSortOrder == "Desc")
+                        {
+                            <button type="submit" name="sort" value="cost">@Html.DisplayNameFor(model => model.Cost) <b class="glyphicon glyphicon-chevron-down"></b></button>
+                        }
+                        else
+                        {
+                            <button type="submit" name="sort" value="cost">@Html.DisplayNameFor(model => model.Cost) <b class="glyphicon glyphicon-chevron-up"></b></button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="submit" name="sort" value="cost">@Html.DisplayNameFor(model => model.Cost)</button>
+                    }
                 </th>
                 <th></th>
             </tr>

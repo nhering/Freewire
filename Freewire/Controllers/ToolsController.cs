@@ -26,7 +26,7 @@ namespace Freewire.Controllers
         // GET: Tools
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RadioQualifier(int distance, int bandwidth, string lastSort, string sort = "")
+        public ActionResult RadioQualifier(int distance, int bandwidth, string sort, string lastSort, string lastSortOrder)
         {
             //Keeps previously entered data in the form fields.
             ViewBag.distance = distance;
@@ -42,28 +42,86 @@ namespace Freewire.Controllers
             switch (sort)
             {
                 case "make":
-                    if (lastSort == "Desc")
+                    if (lastSortOrder == "Desc")
                     {
                         equip = equip.OrderBy(e => e.Make);
-                        ViewBag.lastSort = "Asc";
+                        ViewBag.lastSortOrder = "Asc";
                     }
                     else
                     {
                         equip = equip.OrderByDescending(e => e.Make);
-                        ViewBag.lastSort = "Desc";
+                        ViewBag.lastSortOrder = "Desc";
                     }
-                    break;                        
-                case "make_desc":
-                    equip = equip.OrderByDescending(e => e.Make);
+                    ViewBag.lastSort = "make";
+                    break;
+                case "model":
+                    if (lastSortOrder == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.Model);
+                        ViewBag.lastSortOrder = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.Model);
+                        ViewBag.lastSortOrder = "Desc";
+                    }
+                    ViewBag.lastSort = "model";
                     break;
                 case "distance":
-                    equip = equip.OrderBy(e => e.Distance);
+                    if (lastSortOrder == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.Distance);
+                        ViewBag.lastSortOrder = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.Distance);
+                        ViewBag.lastSortOrder = "Desc";
+                    }
+                    ViewBag.lastSort = "distance";
                     break;
-                case "distance_desc":
-                    equip = equip.OrderByDescending(e => e.Distance);
+                case "bandwidth":
+                    if (lastSortOrder == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.Bandwidth);
+                        ViewBag.lastSortOrder = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.Bandwidth);
+                        ViewBag.lastSortOrder = "Desc";
+                    }
+                    ViewBag.lastSort = "bandwidth";
+                    break;
+                case "license":
+                    if (lastSortOrder == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.License);
+                        ViewBag.lastSortOrder = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.License);
+                        ViewBag.lastSortOrder = "Desc";
+                    }
+                    ViewBag.lastSort = "license";
+                    break;
+                case "cost":
+                    if (lastSortOrder == "Desc")
+                    {
+                        equip = equip.OrderBy(e => e.Cost);
+                        ViewBag.lastSortOrder = "Asc";
+                    }
+                    else
+                    {
+                        equip = equip.OrderByDescending(e => e.Cost);
+                        ViewBag.lastSortOrder = "Desc";
+                    }
+                    ViewBag.lastSort = "cost";
                     break;
                 default:
-                    equip = equip.OrderBy(e => e.Cost);
+                    equip = equip.OrderBy(e => e.Make);
+                    ViewBag.lastSort = "make";
                     break;
             }
 
