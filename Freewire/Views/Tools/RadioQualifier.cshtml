@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-6" style="text-align: right;">Enter distance in miles:</label>
                         <div class="col-md-6">
-                            <input class="form-control text-box single-line" type="number" name="distance" value="@ViewBag.distance" required />
+                            <input class="form-control text-box single-line" type="number" name="distance" min="0" step=".5" value="@ViewBag.distance" required />
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-6" style="text-align: right;">Enter bandwidth in Mbps:</label>
                         <div class="col-md-6">
-                            <input class="form-control text-box single-line" type="number" name="bandwidth" value="@ViewBag.bandwidth" required />
+                            <input class="form-control text-box single-line" type="number" name="bandwidth" min="0" value="@ViewBag.bandwidth" required />
                         </div>
                     </div>
                 </div>
@@ -173,6 +173,10 @@
                         </td>
                         <td style="text-align: right;">
                             @Html.DisplayFor(modelItem => item.Cost)
+                        </td>
+                        <td>
+                            @Html.ActionLink(" ", "Edit", "Equipment", new { id = item.ID }, new { @class = "glyphicon glyphicon-pencil" })  
+                            @Html.ActionLink(" ", "Details", "Equipment", new { id = item.ID }, new { @class = "glyphicon glyphicon-th-list" })
                         </td>
                     </tr>
             }
