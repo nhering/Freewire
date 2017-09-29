@@ -32,5 +32,9 @@ namespace Freewire.Models
         }
 
         public System.Data.Entity.DbSet<Freewire.Models.EquipmentModel> EquipmentModels { get; set; }
+
+        public System.Data.Entity.DbSet<Freewire.Models.Company> Companies { get; set; }
+
+        public System.Data.Entity.DbSet<Freewire.Models.CompanyCategory> CompanyCategories { get; set; }
     }
 }

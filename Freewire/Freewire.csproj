@@ -187,18 +187,6 @@
     <Compile Include="Migrations\201709211658035_editEquipmentModel.Designer.cs">
       <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709290010211_companyModel_companyTypeModel_added.cs" />
-    <Compile Include="Migrations\201709290010211_companyModel_companyTypeModel_added.Designer.cs">
-      <DependentUpon>201709290010211_companyModel_companyTypeModel_added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.cs" />
-    <Compile Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.Designer.cs">
-      <DependentUpon>201709290012194_companyModel_companyTypeModel_added1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.cs" />
-    <Compile Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.Designer.cs">
-      <DependentUpon>201709290014005_companyModel_companyTypeModel_added2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CompanyCategory.cs" />
@@ -277,6 +265,16 @@
     <Content Include="Views\Equipment\Edit.cshtml" />
     <Content Include="Views\Equipment\Index.cshtml" />
     <Content Include="Views\Tools\RadioQualifier.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\CompanyCategories\Create.cshtml" />
+    <Content Include="Views\CompanyCategories\Delete.cshtml" />
+    <Content Include="Views\CompanyCategories\Details.cshtml" />
+    <Content Include="Views\CompanyCategories\Edit.cshtml" />
+    <Content Include="Views\CompanyCategories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -303,15 +301,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709211658035_editEquipmentModel.resx">
       <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709290010211_companyModel_companyTypeModel_added.resx">
-      <DependentUpon>201709290010211_companyModel_companyTypeModel_added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.resx">
-      <DependentUpon>201709290012194_companyModel_companyTypeModel_added1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.resx">
-      <DependentUpon>201709290014005_companyModel_companyTypeModel_added2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
