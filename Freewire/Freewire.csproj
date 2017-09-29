@@ -187,15 +187,31 @@
     <Compile Include="Migrations\201709211658035_editEquipmentModel.Designer.cs">
       <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709290010211_companyModel_companyTypeModel_added.cs" />
+    <Compile Include="Migrations\201709290010211_companyModel_companyTypeModel_added.Designer.cs">
+      <DependentUpon>201709290010211_companyModel_companyTypeModel_added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.cs" />
+    <Compile Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.Designer.cs">
+      <DependentUpon>201709290012194_companyModel_companyTypeModel_added1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.cs" />
+    <Compile Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.Designer.cs">
+      <DependentUpon>201709290014005_companyModel_companyTypeModel_added2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CompanyCategory.cs" />
     <Compile Include="Models\EquipmentModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Company.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-table.css" />
+    <Content Include="Content\bootstrap-table.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -264,6 +280,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\extensions\" />
+    <Folder Include="Content\locale\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -285,6 +303,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709211658035_editEquipmentModel.resx">
       <DependentUpon>201709211658035_editEquipmentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290010211_companyModel_companyTypeModel_added.resx">
+      <DependentUpon>201709290010211_companyModel_companyTypeModel_added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290012194_companyModel_companyTypeModel_added1.resx">
+      <DependentUpon>201709290012194_companyModel_companyTypeModel_added1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290014005_companyModel_companyTypeModel_added2.resx">
+      <DependentUpon>201709290014005_companyModel_companyTypeModel_added2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
