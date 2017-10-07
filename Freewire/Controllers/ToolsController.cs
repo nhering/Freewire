@@ -119,8 +119,9 @@ namespace Freewire.Controllers
                     ViewBag.lastSort = "cost";
                     break;
                 default:
-                    equip = equip.OrderBy(e => e.Make);
-                    ViewBag.lastSort = "make";
+                    equip = equip.OrderBy(e => e.Bandwidth);
+                    ViewBag.lastSort = "bandwidth";
+                    ViewBag.lastSortOrder = "Asc";
                     break;
             }
 
